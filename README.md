@@ -35,6 +35,9 @@ A block of cheese slowly melts with each button click.
 ### **Is the Door Open?**
  A philosophical (or sarcastic) answer generator about a door's status.
 
+### **Noodle or Snake?**  
+A whimsical decision between a noodle or a snake.
+
 ## Technologies
 
 - HTML5
@@ -51,4 +54,3 @@ A block of cheese slowly melts with each button click.
 ## License
 
 This project is intended for entertainment and educational use. No warranties, guarantees, or useful outcomes provided.
-
