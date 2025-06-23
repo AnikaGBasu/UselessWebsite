@@ -72,6 +72,14 @@
     <button onclick="playCluck('bored')">Bored Cluck</button>
   </div>
 
+  <!-- 5. Daily Obvious Fact -->
+  <div class="section">
+    <h2>Daily Obvious Fact</h2>
+    <p id="fact"></p>
+    <button onclick="newFact()">Give Me a Fact</button>
+  </div>
+
+
   <script>
     // 2. Is My Screen Clean?
     function dirtyScreen() {
@@ -118,6 +126,16 @@
         }
     }
 
+    // 5. Daily Obvious Fact
+    function newFact() {
+      const facts = [
+        "Water is wet.",
+        "The sky is above you.",
+        "You are on a website.",
+        "Buttons are clickable."
+      ];
+      document.getElementById('fact').innerText = facts[Math.floor(Math.random() * facts.length)];
+    }
   </script>
 </body>
 </html>
