@@ -86,6 +86,14 @@
     <button onclick="meltCheese()">Melt</button>
   </div>
 
+  <!-- 7. Is the Door Open? -->
+  <div class="section">
+    <h2>Is the Door Open?</h2>
+    <p id="door-status">Maybe...</p>
+    <button onclick="toggleDoor()">Check Again</button>
+  </div>
+
+
   <script>
     // 2. Is My Screen Clean?
     function dirtyScreen() {
@@ -151,6 +159,13 @@
       cheese.style.transform = `scaleY(${1 / meltLevel})`;
       cheese.style.opacity = `${1 / meltLevel}`;
     }
+
+    // 7. Is the Door Open?
+    function toggleDoor() {
+      const options = ["Yes, but only metaphorically.", "Nope. Try knocking.", "Yes. Hurry inside!", "Maybe..."];
+      document.getElementById('door-status').innerText = options[Math.floor(Math.random() * options.length)];
+    }
+
   </script>
 </body>
 </html>
