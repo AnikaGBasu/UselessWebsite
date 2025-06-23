@@ -59,6 +59,19 @@
     <button onclick="hatJudge()">Judge My Hat</button>
   </div>
 
+  <!-- 4. Chicken Soundboard -->
+  <div class="section">
+    <h2>Chicken Soundboard</h2>
+    <button onclick="playCluck('normal')">Normal Cluck</button>
+    <button onclick="playCluck('angry')">Angry Cluck</button>
+    <button onclick="playCluck('opera')">Opera Cluck</button>
+    <button onclick="playCluck('confused rooster')">Confused Rooster Cluck</button>
+    <button onclick="playCluck('baby')">Baby Cluck</button>
+    <button onclick="playCluck('zombie')">Zombie Cluck</button>
+    <button onclick="playCluck('country')">Country Cluck</button>
+    <button onclick="playCluck('bored')">Bored Cluck</button>
+  </div>
+
   <script>
     // 2. Is My Screen Clean?
     function dirtyScreen() {
@@ -76,6 +89,35 @@
       ];
       document.getElementById('hat-response').innerText = responses[Math.floor(Math.random() * responses.length)];
     }
+
+    // 4. Chicken Soundboard
+    function playCluck(type) {
+        if (type == "normal") {
+            alert("Cluck cluck! 🐓🐓");
+        }
+        if (type == "angry") {
+            alert("Cluck off!");
+        }
+        if (type == "opera") {
+            alert("Cluuuuuuuuuuck!");
+        }
+        if (type == "confused rooster") {
+            alert("Cluck-a-doodle-doo");
+        }
+        if (type == "baby") {
+            alert("Baby cluck! 🐣");
+        }
+        if (type == "zombie") {
+            alert("Braaaains... I mean, cluck!");
+        }
+        if (type == "country") {
+            alert("Yeehaw! Cluckin' good!");
+        }
+        if (type == "bored") {
+            alert("Cluck... *yawn*");
+        }
+    }
+
   </script>
 </body>
 </html>
