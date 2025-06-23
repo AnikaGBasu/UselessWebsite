@@ -23,7 +23,7 @@ Randomly tells you if your screen is clean or not. Adds an un-removable dot to t
 ### **Compliment my hat** 
 Provides random compliments about your imaginary hat. However, it will occasionally insult your hat.
 
-### *Chicken Soundboard** 
+### **Chicken Soundboard**
 Play a variety of chicken cluck sounds from opera clucks to zombie clucks via pop-up alerts. 
 
 ### **Daily Obvious Fact** 
@@ -48,9 +48,10 @@ A whimsical decision between a noodle or a snake.
 ## How to Use
 
 1. Download or clone the repository.
-2. Open any `vX_useless_website.html` file in your browser.
+2. Open the `useless_website.html` file in your browser.
 3. Click buttons.
 
 ## License
 
 This project is intended for entertainment and educational use. No warranties, guarantees, or useful outcomes provided.
+Feel free to contact anika.ghosh.basu@gmail.com with any questions, concerns, or ideas to add. 
