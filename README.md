@@ -45,7 +45,7 @@ A whimsical decision between a noodle or a snake.
 - JavaScript (vanilla)
 
 
-## 🛠️ How to Use
+## How to Use
 
 1. Download or clone the repository.
 2. Open any `vX_useless_website.html` file in your browser.
