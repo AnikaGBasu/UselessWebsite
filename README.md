@@ -26,6 +26,9 @@ Provides random compliments about your imaginary hat. However, it will occasiona
 ### *Chicken Soundboard** 
 Play a variety of chicken cluck sounds from opera clucks to zombie clucks via pop-up alerts. 
 
+### **Daily Obvious Fact** 
+Uncover enlightening facts like "Water is wet" and "You are on a website." Updated with each button click.
+
 ## Technologies
 
 - HTML5
