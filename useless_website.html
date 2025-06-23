@@ -93,6 +93,12 @@
     <button onclick="toggleDoor()">Check Again</button>
   </div>
 
+  <!-- 8. Noodle or Snake? -->
+  <div class="section">
+    <h2>Noodle or Snake?</h2>
+    <p id="noodle-snake">🤔</p>
+    <button onclick="decideNoodleSnake()">Decide</button>
+  </div>
 
   <script>
     // 2. Is My Screen Clean?
@@ -166,6 +172,11 @@
       document.getElementById('door-status').innerText = options[Math.floor(Math.random() * options.length)];
     }
 
+    // 8. Noodle or Snake?
+    function decideNoodleSnake() {
+      const result = Math.random() > 0.5 ? "🥢 Noodle" : "🐍 Snake";
+      document.getElementById('noodle-snake').innerText = result;
+    }
   </script>
 </body>
 </html>
