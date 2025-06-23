@@ -52,11 +52,29 @@
     <button onclick="dirtyScreen()">Make it Dirty</button>
   </div>
 
+  <!-- 3. Hat or Not -->
+  <div class="section">
+    <h2>Hat or Not?</h2>
+    <p id="hat-response">Upload a photo in your mind. You look great.</p>
+    <button onclick="hatJudge()">Judge My Hat</button>
+  </div>
+
   <script>
     // 2. Is My Screen Clean?
     function dirtyScreen() {
       const dirty = Math.random() > 0.5;
       document.getElementById('clean-status').innerText = dirty ? "No. Wipe it." : "Yes. Sparkly clean.";
+    }
+
+    // 3. Hat or Not?
+    function hatJudge() {
+      const responses = [
+        "That hat belongs in a museum.",
+        "No hat detected. Try again with your imagination.",
+        "10/10 hat game.",
+        "The Queen would be proud."
+      ];
+      document.getElementById('hat-response').innerText = responses[Math.floor(Math.random() * responses.length)];
     }
   </script>
 </body>
