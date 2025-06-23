@@ -1,6 +1,3 @@
-
-
-
 #  Useless Website Bundle
 
 Welcome to the **Useless Website Bundle** — a playful and humorous collection of interactive micro-features designed to do absolutely nothing productive.
@@ -25,6 +22,9 @@ Randomly tells you if your screen is clean or not. Adds an un-removable dot to t
 
 ### **Compliment my hat** 
 Provides random compliments about your imaginary hat. However, it will occasionally insult your hat.
+
+### *Chicken Soundboard** 
+Play a variety of chicken cluck sounds from opera clucks to zombie clucks via pop-up alerts. 
 
 ## Technologies
 
