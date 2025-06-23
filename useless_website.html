@@ -79,6 +79,12 @@
     <button onclick="newFact()">Give Me a Fact</button>
   </div>
 
+  <!-- 6. Melt the Cheese -->
+  <div class="section">
+    <h2>Melt the Cheese</h2>
+    <div class="cheese" id="cheese"></div>
+    <button onclick="meltCheese()">Melt</button>
+  </div>
 
   <script>
     // 2. Is My Screen Clean?
@@ -135,6 +141,15 @@
         "Buttons are clickable."
       ];
       document.getElementById('fact').innerText = facts[Math.floor(Math.random() * facts.length)];
+    }
+
+    // 6. Melt the Cheese
+    let meltLevel = 1;
+    function meltCheese() {
+      const cheese = document.getElementById('cheese');
+      meltLevel += 0.2;
+      cheese.style.transform = `scaleY(${1 / meltLevel})`;
+      cheese.style.opacity = `${1 / meltLevel}`;
     }
   </script>
 </body>
