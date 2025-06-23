@@ -7,21 +7,38 @@
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
       background: #f0f0f0;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
-    h1 {
-      margin-bottom: 10px;
+    nav {
+      background: #333;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
     }
     .section {
-      background: white;
+      display: none;
       padding: 20px;
-      margin: 20px auto;
+      max-width: 600px;
+      margin: auto;
+      background: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 500px;
+      margin-top: 20px;
+    }
+    .section.active {
+      display: block;
+    }
+    h1, h2 {
+      text-align: center;
     }
     button {
       padding: 10px 20px;
@@ -40,27 +57,42 @@
       border-radius: 10px;
       transition: transform 0.2s, opacity 0.2s;
     }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to Useless Websites</h1>
+  <nav>
+    <a href="#" onclick="showTab('home')">Home</a>
+    <a href="#" onclick="showTab('clean')">Clean Screen</a>
+    <a href="#" onclick="showTab('hat')">Compliment My Hat</a>
+    <a href="#" onclick="showTab('chicken')">Chicken Soundboard</a>
+    <a href="#" onclick="showTab('fact')">Obvious Fact</a>
+    <a href="#" onclick="showTab('cheese')">Melt Cheese</a>
+    <a href="#" onclick="showTab('door')">Is the Door Open?</a>
+    <a href="#" onclick="showTab('noodle')">Noodle or Snake</a>
+  </nav>
 
-  <!-- 2. Is My Screen Clean -->
-  <div class="section">
+  <div class="section active" id="home">
+    <h2>Welcome to the Useless Website Collection</h2>
+    <p>Use the navigation bar to explore the wonders of absolutely pointless digital genius.</p>
+  </div>
+
+  <div class="section" id="clean">
     <h2>Is My Screen Clean?</h2>
     <p id="clean-status">Yes.</p>
     <button onclick="dirtyScreen()">Make it Dirty</button>
   </div>
 
-  <!-- 3. Hat or Not -->
-  <div class="section">
-    <h2>Hat or Not?</h2>
+  <div class="section" id="hat">
+    <h2>Compliment My Hat</h2>
     <p id="hat-response">Upload a photo in your mind. You look great.</p>
-    <button onclick="hatJudge()">Judge My Hat</button>
+    <button onclick="hatJudge()">Compliment My Hat</button>
   </div>
 
-  <!-- 4. Chicken Soundboard -->
-  <div class="section">
+  <div class="section" id="chicken">
     <h2>Chicken Soundboard</h2>
     <button onclick="playCluck('normal')">Normal Cluck</button>
     <button onclick="playCluck('angry')">Angry Cluck</button>
@@ -72,53 +104,72 @@
     <button onclick="playCluck('bored')">Bored Cluck</button>
   </div>
 
-  <!-- 5. Daily Obvious Fact -->
-  <div class="section">
+  <div class="section" id="fact">
     <h2>Daily Obvious Fact</h2>
-    <p id="fact"></p>
+    <p id="fact-text"></p>
     <button onclick="newFact()">Give Me a Fact</button>
   </div>
 
-  <!-- 6. Melt the Cheese -->
-  <div class="section">
+  <div class="section" id="cheese">
     <h2>Melt the Cheese</h2>
-    <div class="cheese" id="cheese"></div>
+    <div class="cheese" id="cheese-block"></div>
     <button onclick="meltCheese()">Melt</button>
   </div>
 
-  <!-- 7. Is the Door Open? -->
-  <div class="section">
+  <div class="section" id="door">
     <h2>Is the Door Open?</h2>
     <p id="door-status">Maybe...</p>
     <button onclick="toggleDoor()">Check Again</button>
   </div>
 
-  <!-- 8. Noodle or Snake? -->
-  <div class="section">
+  <div class="section" id="noodle">
     <h2>Noodle or Snake?</h2>
-    <p id="noodle-snake">🤔</p>
+    <img id="noodle-snake-img" src="" alt="Noodle or Snake?">
     <button onclick="decideNoodleSnake()">Decide</button>
   </div>
 
   <script>
-    // 2. Is My Screen Clean?
+    function showTab(id) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
+    }
+
     function dirtyScreen() {
       const dirty = Math.random() > 0.5;
-      document.getElementById('clean-status').innerText = dirty ? "No. Wipe it." : "Yes. Sparkly clean.";
+      const status = document.getElementById('clean-status');
+      status.innerText = dirty ? "No. Wipe it." : "Yes. Sparkly clean.";
+      if (dirty) {
+        const dot = document.createElement('div');
+        dot.style.position = 'absolute';
+        dot.style.width = '8px';
+        dot.style.height = '8px';
+        dot.style.backgroundColor = 'black';
+        dot.style.borderRadius = '50%';
+        dot.style.left = Math.random() * window.innerWidth + 'px';
+        dot.style.top = Math.random() * window.innerHeight + 'px';
+        document.body.appendChild(dot);
+      }
     }
 
-    // 3. Hat or Not?
     function hatJudge() {
-      const responses = [
-        "That hat belongs in a museum.",
-        "No hat detected. Try again with your imagination.",
-        "10/10 hat game.",
-        "The Queen would be proud."
+      const compliments = [
+        "That hat is pure elegance.", "You look smashing in that hat!", "A fashion icon with a hat like that.",
+        "Your hat radiates confidence.", "Stunning choice!", "Majestic and magnificent.", "Perfection perched on your head.",
+        "Your hat game is next level.", "Crowning glory right there.", "It's giving royal energy.",
+        "Dapper, delightful, distinguished.", "I salute your impeccable taste.", "So chic!", "The hat of champions.",
+        "If hats had awards, yours would win.", "Runway ready!", "It completes you.", "10/10 hatitude.",
+        "Iconic beyond belief.", "Hat-tastic!"
       ];
-      document.getElementById('hat-response').innerText = responses[Math.floor(Math.random() * responses.length)];
+      const insults = [
+        "Are you sure that's a hat?", "Bold choice... very bold.", "Well... it's on your head.",
+        "Unique. Very unique.", "Some might say it's brave."
+      ];
+      const allResponses = compliments.concat(insults);
+      const response = allResponses[Math.floor(Math.random() * allResponses.length)];
+      document.getElementById('hat-response').innerText = response;
     }
 
-    // 4. Chicken Soundboard
     function playCluck(type) {
         if (type == "normal") {
             alert("Cluck cluck! 🐓🐓");
@@ -146,36 +197,52 @@
         }
     }
 
-    // 5. Daily Obvious Fact
     function newFact() {
       const facts = [
-        "Water is wet.",
-        "The sky is above you.",
-        "You are on a website.",
-        "Buttons are clickable."
+        "Water is wet.", "The sky is above you.", "You are on a website.", "Buttons are clickable.",
+        "The Earth rotates.", "Fire is hot.", "Ice is cold.", "Rain is wet.", "Birds fly.",
+        "Grass is green.", "Snow is white.", "The sun rises in the east.", "Fish swim.",
+        "Mountains are tall.", "Cats meow.", "Dogs bark.", "Clouds are fluffy.", "Balloons pop.",
+        "Bread gets moldy.", "Time moves forward.", "Humans breathe air.", "Shoes go on feet.",
+        "Phones need charging.", "Stars are far away.", "Bananas are yellow.", "Trees grow.",
+        "Cars need fuel.", "Chairs are for sitting.", "Pens write.", "Wheels spin."
       ];
-      document.getElementById('fact').innerText = facts[Math.floor(Math.random() * facts.length)];
+      document.getElementById('fact-text').innerText = facts[Math.floor(Math.random() * facts.length)];
     }
 
-    // 6. Melt the Cheese
     let meltLevel = 1;
     function meltCheese() {
-      const cheese = document.getElementById('cheese');
-      meltLevel += 0.2;
-      cheese.style.transform = `scaleY(${1 / meltLevel})`;
-      cheese.style.opacity = `${1 / meltLevel}`;
+      const cheese = document.getElementById('cheese-block');
+      meltLevel += 1;
+      cheese.style.transform = `scaleY(${1 - meltLevel / 15})`;
+      cheese.style.opacity = `${1 - meltLevel / 15}`;
     }
 
-    // 7. Is the Door Open?
     function toggleDoor() {
-      const options = ["Yes, but only metaphorically.", "Nope. Try knocking.", "Yes. Hurry inside!", "Maybe..."];
+      const options = [
+        "Yes, but only metaphorically.",
+        "Nope. Try knocking.",
+        "Yes. Hurry inside!",
+        "Maybe...",
+        "It’s open, but only in another dimension.",
+        "Temporarily closed for dramatic effect.",
+        "Only the worthy may enter.",
+        "You left it open. Again.",
+        "Yes, but it leads nowhere.",
+        "Open, but guarded by a suspicious chicken."
+      ];
       document.getElementById('door-status').innerText = options[Math.floor(Math.random() * options.length)];
     }
 
-    // 8. Noodle or Snake?
     function decideNoodleSnake() {
-      const result = Math.random() > 0.5 ? "🥢 Noodle" : "🐍 Snake";
-      document.getElementById('noodle-snake').innerText = result;
+      const options = [
+        { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Spaghetti_al_Pomodoro.JPG/320px-Spaghetti_al_Pomodoro.JPG", alt: "🥢 Noodle" },
+        { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Indian_python.jpg/320px-Indian_python.jpg", alt: "🐍 Snake" }
+      ];
+      const choice = options[Math.floor(Math.random() * options.length)];
+      const img = document.getElementById('noodle-snake-img');
+      img.src = choice.src;
+      img.alt = choice.alt;
     }
   </script>
 </body>
