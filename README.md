@@ -32,6 +32,9 @@ Uncover enlightening facts like "Water is wet" and "You are on a website." Updat
 ### **Melt the Cheese** 
 A block of cheese slowly melts with each button click.
 
+### **Is the Door Open?**
+ A philosophical (or sarcastic) answer generator about a door's status.
+
 ## Technologies
 
 - HTML5
