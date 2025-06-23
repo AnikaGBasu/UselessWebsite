@@ -1,4 +1,7 @@
-#  Useless Website 
+
+
+
+#  Useless Website Bundle
 
 Welcome to the **Useless Website Bundle** — a playful and humorous collection of interactive micro-features designed to do absolutely nothing productive.
 
@@ -20,6 +23,9 @@ Each version builds on the last, incrementally adding more absurd utilities:
 ### **Is My Screen Clean?** 
 Randomly tells you if your screen is clean or not. Adds an un-removable dot to the screen if it says the screen is dirty. 
 
+### **Compliment my hat** 
+Provides random compliments about your imaginary hat. However, it will occasionally insult your hat.
+
 ## Technologies
 
 - HTML5
@@ -27,7 +33,7 @@ Randomly tells you if your screen is clean or not. Adds an un-removable dot to t
 - JavaScript (vanilla)
 
 
-## How to Use
+## 🛠️ How to Use
 
 1. Download or clone the repository.
 2. Open any `vX_useless_website.html` file in your browser.
