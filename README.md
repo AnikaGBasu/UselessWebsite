@@ -29,6 +29,9 @@ Play a variety of chicken cluck sounds from opera clucks to zombie clucks via po
 ### **Daily Obvious Fact** 
 Uncover enlightening facts like "Water is wet" and "You are on a website." Updated with each button click.
 
+### **Melt the Cheese** 
+A block of cheese slowly melts with each button click.
+
 ## Technologies
 
 - HTML5
